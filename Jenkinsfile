@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh "ls"
-                sh "cd backend"
+                sh "cd ./backend"
                 sh "ls"
                 sh "npm install --quiet"
             }
