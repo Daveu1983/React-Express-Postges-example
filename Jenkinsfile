@@ -19,5 +19,21 @@ pipeline {
                 '''
             }
         }
+        stage('Docker Build'){
+            container('docker'){
+                sh script:'''
+                #!/bin/bash
+                cd ./backend
+                docker build -t back ./backend
+                '''
+            }
+        }
+        stage ('Docker run'){
+            container('docker'){
+                sh script:'''
+                #!bin/bash
+                docker run -p 8000:8000 back
+            }
+        }
     }
 }
