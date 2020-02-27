@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "npm instal --quiet"
+                sh "npm install --quiet"
             }
         }
         stage('test') {
