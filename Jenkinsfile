@@ -20,7 +20,7 @@ pipeline {
             }
         }
         stage('Docker Build') {
-            container('docker'){
+            container('docker') {
                 sh script:'''
                 #!/bin/bash
                 cd ./backend
@@ -29,7 +29,7 @@ pipeline {
             }
         }
         stage ('Docker run') {
-            container('docker'){
+            container('docker') {
                 sh script:'''
                 #!bin/bash
                 docker run -p 8000:8000 back
