@@ -6,7 +6,6 @@ pipeline {
                 sh script:'''
                 #!/bin/bash
                 cd ./backend
-                npm clear cache --force
                 npm install --quiet
                 '''
             }
