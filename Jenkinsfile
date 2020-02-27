@@ -19,7 +19,7 @@ pipeline {
                 '''
             }
         }
-        stage('Docker Build'){
+        stage('Docker Build') {
             container('docker'){
                 sh script:'''
                 #!/bin/bash
@@ -28,7 +28,7 @@ pipeline {
                 '''
             }
         }
-        stage ('Docker run'){
+        stage ('Docker run') {
             container('docker'){
                 sh script:'''
                 #!bin/bash
