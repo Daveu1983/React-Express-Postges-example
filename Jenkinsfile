@@ -8,7 +8,9 @@ pipeline {
         }
         stage('test') {
             steps {
+                sh "cd backend"
                 sh "npm test"
+                sh "cd ../"
             }
         }
     }
