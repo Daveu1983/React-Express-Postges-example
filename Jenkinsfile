@@ -1,12 +1,12 @@
-pipeline{
-    stages{
-        stage('build'){
-            steps{
+pipeline {
+    stages {
+        stage('build') {
+            steps {
                 sh "npm instal --quiet"
             }
         }
-        stage('test'){
-            steps{
+        stage('test') {
+            steps {
                 sh "npm test"
             }
         }
