@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-                image 'node:12-alpine'
-            }
-        }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -23,15 +19,15 @@ pipeline {
                 '''
             }
         }
-        // stage('Docker Build') {
-        //     container('docker') {
-        //         docker build -t back ./backend
-        //     }
-        // }
-        // stage ('Docker run') {
-        //     container('docker') {
-        //         docker run -p 8000:8000 back
-        //     }
-        // }
+        stage('Docker Build') {
+            container('docker') {
+                docker build -t back ./backend
+            }
+        }
+        stage ('Docker run') {
+            container('docker') {
+                docker run -p 8000:8000 back
+            }
+        }
     }
 }
