@@ -1,6 +1,6 @@
 pipeline {
+    agent docker
     stages {
-        agent any
         stage('build') {
             steps {
                 sh script:'''
@@ -19,7 +19,6 @@ pipeline {
                 '''
             }
         }
-        agent docker
         stage('Docker Build') {
             container('docker') {
                 sh script:'''
