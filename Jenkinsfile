@@ -6,15 +6,18 @@ pipeline {
                 sh script:'''
                 #!/bin/bash
                 cd ./backend
-                ls
+                npm clear cache --force
                 npm install --quiet
                 '''
             }
         }
         stage('test') {
             steps {
-                sh "npm test"
-                sh "cd ../"
+                sh script:'''
+                #!/bin/bash
+                cd ./backend
+                npm test
+                '''
             }
         }
     }
