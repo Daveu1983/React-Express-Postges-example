@@ -5,22 +5,18 @@ node {
     }
 
     stage('build') {
-        steps {
-            sh script:'''
-            #!/bin/bash
-            cd ./backend
-            npm install --quiet
-            '''
-        }
+        sh script:'''
+        #!/bin/bash
+        cd ./backend
+        npm install --quiet
+        '''
     }
     stage('test') {
-        steps {
-            sh script:'''
-            #!/bin/bash
-            cd ./backend
-            npm test
-            '''
-        }
+        sh script:'''
+        #!/bin/bash
+        cd ./backend
+        npm test
+        '''
     }
     stage('Docker Build') {
         sh script:'''
