@@ -34,7 +34,9 @@ node {
      input message: 'Finished using the web site? (Click "Proceed" to continue)'
      sh script:'''
      #!/bin/bash
-     docker stop back:v1.0
+     docker stop back1
+     docker kill back1
+     docker rm back1
      '''
     }
 }
