@@ -1,6 +1,10 @@
-pipeline {
-    agent { Dockerfile true }
+node {
+    def app
     stages {
+        stage('Clone repo'){
+            checkout scm
+        }
+
         stage('build') {
             steps {
                 sh script:'''
@@ -20,7 +24,11 @@ pipeline {
             }
         }
         stage('Docker Build') {
-                docker.build("-t back ./backend")
+            sh script:'''
+            #!/bin/bash
+            cd ./backend
+            '''
+            app =  docker.build("back")
         }
         // stage ('Docker run') {
         //     container('docker') {
