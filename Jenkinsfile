@@ -29,8 +29,12 @@ node {
     stage ('Docker run') {
      sh script:'''
      #!/bin/bash
-     docker run back
+     docker run -p 8000:8000 --name:back:v1.0 back
+     '''
+     input message: 'Finished using the web site? (Click "Proceed" to continue)'
+     sh script:'''
+     #!/bin/bash
+     docker stop back:v1.0
      '''
     }
-    
 }
