@@ -22,7 +22,7 @@ node {
         sh script:'''
         #!/bin/bash
         cd ./backend
-        ls
+        pwd
         '''
         app =  docker.build("back")
     }
