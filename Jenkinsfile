@@ -24,7 +24,7 @@ node {
         cd ./backend
         pwd
         '''
-        app =  docker.build("back")
+        app =  docker.build("back", "-f ./backend/Dockerfile .")
     }
     // stage ('Docker run') {
     //     container('docker') {
