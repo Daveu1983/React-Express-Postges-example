@@ -26,9 +26,8 @@ node {
         '''
         app =  docker.build("back", "-f ./backend/Dockerfile .")
     }
-    // stage ('Docker run') {
-    //     container('docker') {
-    //         docker run -p 8000:8000 back
-    //     }
-    // }
+    stage ('Docker run') {
+        docker.run ("-p 8000:8000 back")
+    }
+    
 }
