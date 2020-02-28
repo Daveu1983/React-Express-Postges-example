@@ -24,10 +24,10 @@ node {
         cd ./backend
         pwd
         '''
-        app =  docker.build("back", "-f ./backend/Dockerfile .")
+        app = docker.build("back", "-f ./backend/Dockerfile .")
     }
     stage ('Docker run') {
-        docker.run ("-p 8000:8000 back")
+     app = docker.run ("-p 8000:8000 back")
     }
     
 }
