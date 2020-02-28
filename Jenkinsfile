@@ -30,6 +30,7 @@ node {
      sh script:'''
      #!/bin/bash
      docker run -it back
+     '''
     }
     
 }
