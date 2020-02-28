@@ -35,7 +35,6 @@ node {
      sh script:'''
      #!/bin/bash
      docker stop back1
-     docker kill back1
      docker rm back1
      '''
     }
