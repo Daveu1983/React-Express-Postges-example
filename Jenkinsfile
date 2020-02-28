@@ -29,7 +29,7 @@ node {
     stage ('Docker run') {
      sh script:'''
      #!/bin/bash
-     docker run -it back
+     docker run back
      '''
     }
     
